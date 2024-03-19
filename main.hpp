@@ -17,15 +17,11 @@ int getRandom(void)
          * Code your program here
          ***************************************************/
         //  int result = 0;
-         srand(time(0));
-         int rdnum1 = rand()%(99 + 1);
-         cout << "Random number #1: " << rdnum1 << endl;
-         int rdnum2 = rand()%(99 + 1);
-         cout << "Random number #2: " << rdnum2 << endl;
-         int rdnum3 = rand()%(99 + 1);
-         cout << "Random number #3: " << rdnum3 << endl;
-        int result = getClosestMed(rdnum1, rdnum2, rdnum3);
-        return rdnum1, rdnum2, rdnum3;
+         static int Random = 0;
+         //Do not include s(rand(0)), unless you want to use the same number every time
+         Random = rand()%(99 + 1);
+         cout << "Random number #1: " << Random << endl;
+         return Random;
 }
 int getClosestMed(int rdnum1, int rdnum2, int rdnum3)
 {
